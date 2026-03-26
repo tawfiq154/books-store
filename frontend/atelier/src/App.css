@@ -1,0 +1,85 @@
+/* Premium App Overrides & Animations */
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+::selection {
+  background: var(--accent-ring);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-default);
+}
+
+/* Page Transitions & Animations */
+.fade-in {
+  animation: fadeIn var(--transition);
+  will-change: opacity, transform;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glassmorphic utilities */
+.glass {
+  background: var(--surface-glass);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid var(--border-faint);
+}
+
+/* Logo glow */
+.logo {
+  will-change: filter;
+  transition: filter var(--transition), transform var(--transition);
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 24px var(--accent-glow));
+  transform: scale(1.05);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 24px var(--accent-bright));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 25s linear;
+  }
+}
