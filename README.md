@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="Books API Banner" width="100%" style="border-radius: 10px; margin-bottom: 20px;" />
+  <img src="assets/banner.png" alt="Books API Banner" width="100%" style="border-radius: 10px; margin-bottom: 20px;" />
 
   <h1>📚 Books API — Library Ecosystem</h1>
   <p><strong>A sleek, modern, and premium full-stack book catalog built for the future of digital libraries.</strong></p>
@@ -159,8 +159,8 @@ For more details, check [docs/VERCEL.md](./docs/VERCEL.md).
 <p align="center">
   <i>Add your screenshots here to showcase the beautiful UI!</i>
   <br />
-  <img src="./assets/screenshot_home.png" width="45%" />
-  <img src="./assets/screenshot_details.png" width="45%" />
+  <img src="assets/screenshot_home.png" width="45%" />
+  <img src="assets/screenshot_details.png" width="45%" />
 </p>
 
 ---
