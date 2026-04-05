@@ -80,11 +80,7 @@ function AppShell() {
 }
 
 function App() {
-  return (
-    <BrowserRouter>
-      <AppShell />
-    </BrowserRouter>
-  )
+  return <AppShell />
 }
 
 export default App

@@ -1,3 +1,10 @@
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+process.on('uncaughtException', (err) => {
+  console.log('Uncaught Exception:', err);
+});
+
 import { createApp } from './app.js'
 import { connectDB } from './db.js'
 

@@ -6,7 +6,7 @@ export default function KeycloakProvider({ children }) {
 
   useEffect(() => {
     keycloak
-      .init({ onLoad: "check-sso", pkceMethod: "S256" })
+      .init({ onLoad: "login-required", checkLoginIframe: false, pkceMethod: "S256" })
       .then(() => setReady(true))
       .catch(() => setReady(true));
   }, []);

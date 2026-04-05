@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import { connectDB } from './db.js'
-
+import { requireKeycloakAuth, requireRole } from './keycloakAuth.js'
 const Livre =
   mongoose.models.Livre ||
   mongoose.model('Livre', {
@@ -20,6 +20,7 @@ const Categorie =
 
 const api = express.Router()
 
+api.use(requireKeycloakAuth)
 api.get('/categories', async (req, res) => {
   const categories = await Categorie.find()
   res.json(categories)
@@ -44,12 +45,12 @@ api.post('/livres', async (req, res) => {
   res.status(201).json({ message: 'Livre ajouté', livre })
 })
 
-api.delete('/livres/:id', async (req, res) => {
+api.delete('/livres/:id', requireRole('ADMIN'), async (req, res) => {
   await Livre.findByIdAndDelete(req.params.id)
   res.json({ message: 'Livre supprimé' })
 })
 
-api.put('/livres/:id', async (req, res) => {
+api.put('/livres/:id', requireRole('ADMIN'), async (req, res) => {
   const livre = await Livre.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   })
