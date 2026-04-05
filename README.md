@@ -157,10 +157,11 @@ For more details, check [docs/VERCEL.md](./docs/VERCEL.md).
 ## 📸 Screenshots
 
 <p align="center">
-  <i>Add your screenshots here to showcase the beautiful UI!</i>
+  <i>Preview of the beautiful Library UI</i>
   <br />
-  <img src="assets/screenshot_home.png" width="45%" />
-  <img src="assets/screenshot_details.png" width="45%" />
+  <img src="assets/screenshot_home.png" width="80%" alt="Home Screen" />
+  <br />
+  <img src="assets/screenshot_details.png" width="80%" alt="Details Screen" />
 </p>
 
 ---
